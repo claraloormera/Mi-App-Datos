@@ -13,6 +13,13 @@ def index():
     return render_template('index.html', object_list=csv_list,
 )
 
+@app.route('/<number>/')
+def detail(number):
+    return render_template('detail.html',
+        object=csv_dict[number],
+)
+    
+
 if __name__ == '__main__':
     app.run(
         host="0.0.0.0",
